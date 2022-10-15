@@ -8,3 +8,6 @@ I just wanted to try some things with awk again. The trick seemed to be to load 
 # Day 2
 This day more about python3. Just load the data into a list and add the values accordingly...
 
+# Day 5
+Again I'm using python3 to do some array based counting. And using the right arrays was a big help. For part 1, one can just comment out the diagonal elif section
+
