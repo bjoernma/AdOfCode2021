@@ -1,4 +1,4 @@
-filename="04_input_test"
+filename="05_input"
 with open(filename,"r") as file:
     line = file.readlines()
 
@@ -34,6 +34,28 @@ for cnt in range(0,len(line)):
         for x_ind in range(xa[cnt],xb[cnt]+1):
             field[x_ind][ya[cnt]]+=1
         print("use",cnt,": ",xa[cnt]," ",ya[cnt]," ",xb[cnt]," ",yb[cnt])
+    elif abs(xa[cnt]-xb[cnt])==abs(ya[cnt]-yb[cnt]): # diagonal
+        print("-------------")
+        initial_x = xa[cnt]
+        initial_y = ya[cnt]
+        n_steps = xb[cnt]-xa[cnt]
+        if xa[cnt]<xb[cnt]:
+            direct_x = 1
+        else:
+            direct_x = -1
+        if ya[cnt]<yb[cnt]:
+            direct_y = 1
+        else:
+            direct_y = -1
+
+
+        print(n_steps)
+        for i in range(0,abs(n_steps)+1):
+            print("x: ",initial_x+direct_x*i," y: ",initial_y+direct_y*i)
+            field[initial_x+direct_x*i][initial_y+direct_y*i]+=1
+        print("use diagonal",cnt,": ",xa[cnt]," ",ya[cnt]," ",xb[cnt]," ",yb[cnt])
+        print("/-------------")
+        
 #    for i in range(0,len(line)):
 #        print(field[i])
 #    print("---------")
